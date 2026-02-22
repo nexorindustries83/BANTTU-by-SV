@@ -1,11 +1,11 @@
 /* --- VARIABLES CSS & RESET --- */
 :root {
-    --color-nude: #EBD5CC;
-    --color-sand: #FAF7F5;
-    --color-white: #FFFFFF;
-    --color-black: #1C1C1C;
-    --color-accent: #EFD0DB;
-    --color-gray-light: #FAFAFA;
+    --color-nude: #D7B89B;
+    --color-sand: #F6EFE4;
+    --color-white: #FFFDF8;
+    --color-black: #2C1E17;
+    --color-accent: #C57A52;
+    --color-gray-light: #EFE3D3;
     
     --font-serif: 'Playfair Display', serif;
     --font-sans: 'Montserrat', sans-serif;
@@ -108,7 +108,7 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(250, 247, 245, 0.95);
+    background-color: rgba(246, 239, 228, 0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
     box-shadow: 0 2px 20px rgba(0,0,0,0.03);
@@ -879,7 +879,7 @@ footer {
         top: 70px;
         left: 0;
         width: 100%;
-        background-color: var(--color-white);
+        background-color: var(--color-sand);
         flex-direction: column;
         align-items: center;
         padding: 40px 0;

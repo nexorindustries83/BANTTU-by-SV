@@ -1,0 +1,465 @@
+<!-- 
+  PROYECTO: BANTTÚ by SV
+  VERSIÓN: 1.0 (Producción)
+  DESARROLLADOR: Nexor - Tecnology Systems
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BANTTÚ by SV - Calzado femenino elegante, minimalista y moderno. Diseños exclusivos para la mujer actual.">
+    <meta property="og:title" content="BANTTÚ by SV | Elegancia que camina contigo">
+    <meta property="og:description" content="Descubre nuestra nueva colección de zapatos femeninos. Elegancia y comodidad en cada paso.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1515347619252-60a6bf4fffce?q=80&w=1200">
+    <meta property="og:type" content="website">
+    <title>BANTTÚ by SV | Elegancia que camina contigo</title>
+    
+    <!-- Optimizaciones Móviles (Android & iOS) -->
+    <meta name="theme-color" content="#FAF7F5">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👠</text></svg>">
+    
+    <!-- Google Analytics (GA4) - Descomentar y poner ID real cuando se tenga
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TU_ID_AQUI"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-TU_ID_AQUI');
+    </script>
+    -->
+
+    <!-- Fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Iconos (FontAwesome CDN para prototipos) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">BANTTÚ <span>by SV</span></a>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#hero">Inicio</a></li>
+                    <li><a href="#collection">Colección</a></li>
+                    <li><a href="#identity">Sobre Nosotros</a></li>
+                    <li><a href="#cta">Contacto</a></li>
+                </ul>
+
+                <div class="nav-icons">
+                    <div class="cart-icon-wrap" onclick="openCart()" role="button" aria-label="Abrir carrito" tabindex="0">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </div>
+                    <a href="https://wa.me/573157243588" target="_blank" class="whatsapp-btn" aria-label="Contactar por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <div class="mobile-toggle" id="mobileToggle">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Elegancia que camina contigo</h1>
+            <p>Diseños exclusivos pensados para la mujer moderna que no renuncia a la comodidad.</p>
+            <a href="#collection" class="btn btn-light">Ver Colección</a>
+        </div>
+    </section>
+
+    <!-- COLECCIÓN -->
+    <section id="collection" class="section-padding container">
+        <div class="section-title reveal">
+            <h2>Nueva Colección</h2>
+            <span></span>
+        </div>
+
+        <div class="category-filters" id="categoryFilters">
+            <button class="filter-btn active" onclick="filterProducts('all')">Todos</button>
+            <button class="filter-btn" onclick="filterProducts('sandalias')">Sandalias</button>
+            <button class="filter-btn" onclick="filterProducts('tacones')">Tacones</button>
+            <button class="filter-btn" onclick="filterProducts('baletas')">Baletas</button>
+            <button class="filter-btn" onclick="filterProducts('stilettos')">Stilettos</button>
+            <button class="filter-btn" onclick="filterProducts('tenis')">Tenis</button>
+        </div>
+
+        <div class="products-grid">
+            <!-- Productos cargados dinámicamente -->
+        </div>
+    </section>
+
+    <!-- IDENTIDAD DE MARCA -->
+    <section id="identity" class="section-padding identity reveal">
+        <div class="container identity-content">
+            <h2>Más que zapatos, una declaración</h2>
+            <p>En BANTTÚ by SV creemos que el calzado es la base de la confianza. Cada par es diseñado meticulosamente combinando la artesanía tradicional con las tendencias contemporáneas, utilizando materiales que abrazan tus pies.</p>
+            <a href="#" class="btn btn-outline" style="pointer-events: none; opacity: 0.6;">Nuestra Historia</a>
+        </div>
+    </section>
+
+    <!-- BENEFICIOS -->
+    <section id="benefits" class="section-padding container reveal">
+        <div class="benefits-grid">
+            <div class="benefit-item">
+                <i class="fas fa-crown benefit-icon"></i>
+                <h3>Diseño Exclusivo</h3>
+                <p>Piezas únicas creadas para resaltar tu personalidad.</p>
+            </div>
+            <div class="benefit-item">
+                <i class="fas fa-feather-alt benefit-icon"></i>
+                <h3>Comodidad Absoluta</h3>
+                <p>Plantillas ergonómicas para usar todo el día.</p>
+            </div>
+            <div class="benefit-item">
+                <i class="fas fa-gem benefit-icon"></i>
+                <h3>Calidad Premium</h3>
+                <p>Materiales seleccionados para durar en el tiempo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section id="cta" class="section-padding cta reveal">
+        <div class="container">
+            <h2>¿Lista para dar el siguiente paso?</h2>
+            <p style="margin-bottom: 2rem;">Recibe asesoría personalizada y compra directamente.</p>
+            <a href="https://wa.me/573157243588?text=Hola%20BANTTÚ,%20necesito%20asesoría%20sobre%20sus%20productos." target="_blank" class="btn btn-primary">
+                <i class="fab fa-whatsapp" style="margin-right: 8px;"></i> Comprar por WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <a href="#" class="footer-logo">BANTTÚ by SV</a>
+            <div class="social-links">
+                <a href="https://www.instagram.com/banttu_by.sv?igsh=MXJjOXV6eDU1d2dr&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@banttu_?_r=1&_t=ZS-93PLmdbwyKP" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.facebook.com/people/Banttu-Store/61585272604769/?mibextid=wwXIfr&rdid=pLANRVhOtd5XGY2c&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1BE27Dw6gj%2F%3Fmibextid%3DwwXIfr"  target="_blank"><i class="fab fa-facebook-f"></i></a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 BANTTÚ by SV. Todos los derechos reservados.</p>
+            <p style="font-size: 0.7rem; margin-top: 5px; opacity: 0.6;"><a href="https://nexor-tecnology-systems.netlify.app/" target="_blank" style="color: inherit; text-decoration: none;">Desarrollado por Nexor - Tecnology Systems</a></p>
+                <i class="fas fa-lock admin-trigger" onclick="openAdminLogin()" title="Acceso Administrativo"></i>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ELEMENTOS FLOTANTES (CARRITO Y MODAL) -->
+    <div class="overlay" id="overlay" onclick="closeCart(); closeModal()"></div>
+
+    <!-- Sidebar Carrito -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Tu Bolsa de Compras</h3>
+            <i class="fas fa-times" style="cursor: pointer;" onclick="closeCart()" role="button" aria-label="Cerrar carrito" tabindex="0"></i>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Items inyectados por JS -->
+            <p class="text-center" style="margin-top: 50px; color: #999;">Tu carrito está vacío.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="btn btn-primary btn-block" onclick="openCheckout()">Proceder al Pago</button>
+            <button class="btn btn-outline btn-block" onclick="closeCart()">Seguir Comprando</button>
+        </div>
+    </div>
+
+    <!-- Modal Checkout -->
+    <div class="modal" id="checkoutModal">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+            <h3>Finalizar Compra</h3>
+            <i class="fas fa-times" style="cursor: pointer;" onclick="closeModal()" role="button" aria-label="Cerrar modal" tabindex="0"></i>
+        </div>
+        
+        <div class="payment-methods">
+            <input type="radio" name="paymentMethod" id="pm-nequi" class="payment-method-input" checked onchange="togglePaymentMethod('nequi')">
+            <label for="pm-nequi" class="payment-method-label"><i class="fas fa-mobile-alt"></i> Nequi</label>
+
+            <input type="radio" name="paymentMethod" id="pm-cash" class="payment-method-input" onchange="togglePaymentMethod('cash')">
+            <label for="pm-cash" class="payment-method-label"><i class="fas fa-truck"></i> Contra Entrega</label>
+        </div>
+
+        <form id="paymentForm" onsubmit="processPayment(event)">
+            <div class="form-group">
+                <label>Nombre Completo</label>
+                <input type="text" id="customerName" required placeholder="Ej. María Pérez">
+            </div>
+            <div class="form-group">
+                <label>Dirección de Envío</label>
+                <input type="text" id="customerAddress" required placeholder="Calle 123 # 45-67, Ciudad">
+            </div>
+
+            <!-- Nequi Details -->
+            <div id="details-nequi" class="payment-details active">
+                <div class="text-center">
+                    <p style="font-size: 0.9rem; margin-bottom: 15px;">Escanea este código QR con tu app Nequi para pagar.</p>
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=tel:573157243588" alt="Código QR Nequi" class="qr-code-img">
+                    <p style="font-size: 0.8rem; color: #666;">O envía al número: <strong>315 724 3588</strong></p>
+                </div>
+                <div class="form-group">
+                    <label style="margin-top: 15px;">Tu Número de Celular (Para confirmar)</label>
+                    <input type="tel" id="nequiPhoneNumber" placeholder="300 000 0000" inputmode="numeric">
+                </div>
+                <div class="form-group">
+                    <label>Subir Comprobante (Opcional)</label>
+                    <input type="file" id="nequiReceipt" accept="image/*">
+                    <p style="font-size: 0.7rem; color: #666; margin-top: 5px;">* La imagen debes adjuntarla en el chat de WhatsApp al finalizar.</p>
+                </div>
+            </div>
+
+            <!-- Cash Details -->
+            <div id="details-cash" class="payment-details">
+                <p style="font-size: 0.9rem; color: #555; margin-bottom: 15px; text-align: center; border: 1px dashed #ccc; padding: 10px;">
+                    <i class="fas fa-info-circle"></i> Pagarás en efectivo al repartidor.
+                </p>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block" id="payBtn">Confirmar Pedido</button>
+        </form>
+        
+        <div style="text-align: center; margin: 15px 0; font-size: 0.8rem; color: #888;">O prefiere un trato personal:</div>
+        
+        <button class="btn btn-whatsapp btn-block" onclick="checkoutWhatsApp()">
+            <i class="fab fa-whatsapp"></i> Enviar Pedido por WhatsApp
+        </button>
+    </div>
+
+    <!-- MODAL DETALLE DE PRODUCTO (NUEVO) -->
+    <div class="modal" id="productDetailModal">
+        <div class="close-modal-btn" onclick="closeProductDetail()">
+            <i class="fas fa-times"></i>
+        </div>
+        <div class="product-detail-wrapper">
+            <!-- Columna Izquierda: Galería -->
+            <div class="detail-gallery-section">
+                <div class="main-image-container">
+                    <div class="gallery-arrow arrow-prev" onclick="navDetailImage(-1)"><i class="fas fa-chevron-left"></i></div>
+                    <img src="" alt="Producto" class="detail-main-img" id="detailMainImg">
+                    <div class="gallery-arrow arrow-next" onclick="navDetailImage(1)"><i class="fas fa-chevron-right"></i></div>
+                </div>
+                <div class="thumbnails-strip" id="detailThumbnails">
+                    <!-- Miniaturas inyectadas por JS -->
+                </div>
+            </div>
+            
+            <!-- Columna Derecha: Información -->
+            <div class="detail-info-section">
+                <span id="detailCategory" style="color: #999; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 5px;">Categoría</span>
+                <h2 id="detailName" style="font-size: 2rem; margin-bottom: 10px; line-height: 1.2;">Nombre del Producto</h2>
+                <p id="detailPrice" style="font-size: 1.5rem; color: var(--color-accent); font-weight: 600; margin-bottom: 20px;">$0.00</p>
+                
+                <div style="margin-bottom: 20px;">
+                    <label style="font-weight: 600; display: block; margin-bottom: 10px;">Color:</label>
+                    <div id="detailColors" class="color-select-wrap" style="justify-content: flex-start;"></div>
+                </div>
+
+                <div class="form-group">
+                    <label style="font-weight: 600;">Talla:</label>
+                    <select id="detailSize" class="size-select" style="width: 100%; padding: 12px;"></select>
+                </div>
+
+                <button class="btn btn-primary btn-block" id="detailAddBtn" style="margin-top: 10px; padding: 15px;">Añadir al Carrito</button>
+                
+                <div style="margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px; color: #666; font-size: 0.9rem; line-height: 1.8;">
+                    <p><strong>Detalles del producto:</strong></p>
+                    <div id="detailDescription"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Scroll to Top -->
+    <div class="scroll-top" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- ADMIN LOGIN MODAL -->
+    <div class="modal" id="adminLoginModal">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+            <h3>Acceso Administrativo</h3>
+            <i class="fas fa-times" style="cursor: pointer;" onclick="closeAdminLogin()"></i>
+        </div>
+        <div class="form-group">
+            <label>Contraseña</label>
+            <input type="password" id="adminPassword" placeholder="Ingrese contraseña">
+        </div>
+        <button class="btn btn-primary btn-block" onclick="checkAdminLogin()">Ingresar</button>
+    </div>
+
+    <!-- ADMIN DASHBOARD -->
+    <div class="admin-dashboard" id="adminDashboard">
+        <div class="container">
+            <div class="admin-header">
+                <h2><i class="fas fa-tachometer-alt"></i> Panel de Control</h2>
+                <button class="btn btn-sm btn-outline" onclick="toggleDarkMode()" title="Modo Oscuro/Claro"><i class="fas fa-moon"></i></button>
+                <button class="btn btn-outline" onclick="closeAdminDashboard()">Cerrar Sesión</button>
+            </div>
+
+            <!-- ESTADÍSTICAS (DASHBOARD) -->
+            <div class="admin-stats-grid">
+                <div class="stat-card">
+                    <h3>Total Productos</h3>
+                    <div class="stat-value" id="statTotalProducts">0</div>
+                </div>
+                <div class="stat-card success">
+                    <h3>Valor Inventario</h3>
+                    <div class="stat-value" id="statInventoryValue">$0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Unidades</h3>
+                    <div class="stat-value" id="statTotalUnits">0</div>
+                </div>
+                <div class="stat-card alert">
+                    <h3>Stock Bajo</h3>
+                    <div class="stat-value" id="statLowStock">0</div>
+                </div>
+            </div>
+
+            <!-- BARRA DE HERRAMIENTAS -->
+            <div class="admin-toolbar">
+                <div class="admin-search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="adminSearchInput" placeholder="Buscar producto por nombre, categoría..." onkeyup="renderAdminList()">
+                </div>
+                <div style="display: flex; gap: 10px;">
+                    <button class="btn btn-primary" onclick="showAddForm()"><i class="fas fa-plus"></i> Nuevo</button>
+                </div>
+            </div>
+
+            <!-- ACCIONES RÁPIDAS (VISIBLES) -->
+            <div class="admin-quick-actions">
+                <button class="btn btn-sm btn-outline" onclick="document.getElementById('bulkUploadSection').style.display = 'block'"><i class="fas fa-file-excel"></i> Carga Masiva</button>
+                <button class="btn btn-sm btn-outline" onclick="runSystemChecks()"><i class="fas fa-stethoscope"></i> Diagnóstico</button>
+                <button class="btn btn-sm btn-outline" onclick="runUnitTests()"><i class="fas fa-vial"></i> Tests Unitarios</button>
+                <button class="btn btn-sm btn-outline" onclick="runStressTest()"><i class="fas fa-bolt"></i> Prueba Estrés</button>
+                <button class="btn btn-sm btn-outline" onclick="toggleAdminConsole()"><i class="fas fa-terminal"></i> Logs</button>
+                <button class="btn btn-sm btn-outline" onclick="downloadBackup()"><i class="fas fa-download"></i> Backup</button>
+                <button class="btn btn-sm btn-outline" onclick="toggleHelp()"><i class="fas fa-question-circle"></i> Ayuda</button>
+                <button class="btn btn-sm btn-outline" onclick="togglePasswordChange()"><i class="fas fa-key"></i> Clave</button>
+            </div>
+
+            <!-- Input oculto para restaurar backup -->
+            <input type="file" id="restoreInput" accept=".json" style="display:none" onchange="restoreBackup(this)">
+
+            <!-- CONSOLA DE LOGS -->
+            <div class="admin-console" id="adminConsole">
+                <div style="display:flex; justify-content:space-between; margin-bottom:10px; border-bottom:1px solid #444; padding-bottom:5px; color: #fff;">
+                    <strong><i class="fas fa-terminal"></i> Registro de Eventos</strong>
+                    <span style="cursor:pointer; color:#aaa;" onclick="clearAdminLogs()"><i class="fas fa-trash"></i> Limpiar</span>
+                </div>
+                <div id="adminLogContent"></div>
+            </div>
+
+            <div class="edit-form" id="passwordChangeForm">
+                <h3>Cambiar Contraseña</h3>
+                <div class="form-group">
+                    <label>Nueva Contraseña</label>
+                    <input type="password" id="newAdminPass" placeholder="Ingresa la nueva clave">
+                </div>
+                <button class="btn btn-primary" onclick="saveNewPassword()">Actualizar</button>
+                <button class="btn btn-outline" onclick="togglePasswordChange()">Cancelar</button>
+            </div>
+
+            <div class="edit-form" id="adminHelp">
+                <h3><i class="fas fa-book"></i> Manual de Administración</h3>
+                <div style="font-size: 0.9rem; color: #d4d4d8; line-height: 1.6; max-height: 400px; overflow-y: auto;">
+                    <p style="background: #1e3a8a; color: #bfdbfe; padding: 10px; border-radius: 4px; border: 1px solid #172554;"><strong>☁️ MODO NUBE:</strong> Si has configurado Firebase, los cambios se guardarán automáticamente para todos los usuarios. Si no, seguirán guardándose solo en este dispositivo.</p>
+                    <p><strong>1. Acceso:</strong> Usa el candado (🔒) en el pie de página. Clave inicial: <code>admin123</code>.</p>
+                    <p><strong>2. Gestión de Productos:</strong>
+                        <ul style="margin-left: 20px; margin-bottom: 10px;">
+                            <li><em>Crear:</em> Botón "Nuevo Producto". Llena nombre, precio y stock por talla.</li>
+                            <li><em>Editar:</em> Botón (✏️) en la lista. Ajusta precios o stock manualmente si vendes en físico.</li>
+                            <li><em>Eliminar:</em> Botón (🗑️). ¡Cuidado! No se puede deshacer.</li>
+                        </ul>
+                    </p>
+                    <p><strong>3. Imágenes:</strong> Puedes subir fotos desde tu celular; el sistema las optimiza automáticamente para que no pesen mucho.</p>
+                    <p><strong>4. Pedidos:</strong> El cliente envía el pedido a tu WhatsApp. El stock en la web se descuenta automáticamente cuando el cliente finaliza el proceso en la página.</p>
+                    <p><strong>5. Copia de Seguridad:</strong> Usa <strong>"Backup"</strong> para descargar tus datos. Usa <strong>"Restaurar"</strong> para cargar un archivo guardado anteriormente si cambias de dispositivo.</p>
+                    <p><strong>6. Publicar Cambios:</strong> Tus cambios son locales. Para que el mundo los vea: Usa <strong>"Copiar Código"</strong>, pega el texto en tu archivo <code>index.html</code> (reemplazando <code>defaultProducts</code>) y sube el archivo a Netlify.</p>
+                    <p style="background: #422006; color: #fde047; padding: 10px; border-radius: 4px; border: 1px solid #713f12;"><strong>⚠️ Importante:</strong> Los datos se guardan en este dispositivo. Evita "Borrar datos de navegación" para no perder el inventario. ¡Usa la función de Backup regularmente!</p>
+                </div>
+                <button class="btn btn-outline" style="margin-top: 15px;" onclick="toggleHelp()">Cerrar Manual</button>
+            </div>
+
+            <div class="edit-form" id="productForm">
+                <h3>Editar/Agregar Producto</h3>
+                <input type="hidden" id="editId">
+                <div class="form-group"><label>Nombre</label><input type="text" id="editName"></div>
+                <div class="form-group">
+                    <label>Categoría</label>
+                    <select id="editCategory" style="width:100%; padding:10px;">
+                        <option value="sandalias">Sandalias</option>
+                        <option value="tacones">Tacones</option>
+                        <option value="baletas">Baletas</option>
+                        <option value="stilettos">Stilettos</option>
+                        <option value="tenis">Tenis</option>
+                    </select>
+                </div>
+                <div class="form-group"><label>Precio</label><input type="number" id="editPrice"></div>
+                <div class="form-group"><label>Descripción</label><textarea id="editDescription" rows="4" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:4px; font-family:inherit;" placeholder="Escribe los detalles del producto..."></textarea></div>
+                
+                <div class="form-group">
+                    <label>Gestión de Colores y Stock</label>
+                    <div style="display:flex; gap:10px; margin-bottom:10px;">
+                        <input type="text" id="newColorInput" placeholder="Nombre del color (ej. Rojo)">
+                        <button class="btn btn-sm btn-outline" onclick="adminAddColor()">Agregar Color</button>
+                    </div>
+                    <div id="stockContainer"></div>
+                </div>
+
+                <div class="form-group">
+                    <label>Imágenes Actuales (Click en X para borrar)</label>
+                    <div id="currentImagesContainer" class="current-images-grid"></div>
+                </div>
+                <div class="form-group"><label>Agregar URLs (separadas por coma)</label><input type="text" id="editImages" placeholder="url1, url2..."></div>
+                <div class="form-group"><label>Subir Nuevas Fotos (Puedes seleccionar varias)</label><input type="file" id="editImageFile" accept="image/*" multiple></div>
+                
+                <button class="btn btn-primary" id="saveProductBtn" onclick="saveProduct()">Guardar Cambios</button>
+                <button class="btn btn-outline" onclick="cancelEdit()">Cancelar</button>
+            </div>
+
+            <!-- SECCIÓN DE CARGA MASIVA -->
+            <div class="edit-form" id="bulkUploadSection" style="display:none; margin-bottom: 30px; border: 2px dashed #ccc;">
+                <h3><i class="fas fa-file-excel"></i> Carga Masiva de Productos</h3>
+                <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Descarga la plantilla, llénala en Excel y súbela para agregar o actualizar productos rápidamente.</p>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                    <button class="btn btn-sm btn-danger" onclick="document.getElementById('bulkUploadSection').style.display = 'none'" style="margin-left:auto">Cerrar</button>
+                    <button class="btn btn-outline" onclick="downloadBulkTemplate()"><i class="fas fa-download"></i> Descargar Plantilla Excel</button>
+                    <button class="btn btn-primary" onclick="document.getElementById('bulkUploadInput').click()"><i class="fas fa-upload"></i> Subir Archivo Lleno</button>
+                    <input type="file" id="bulkUploadInput" accept=".csv" style="display:none" onchange="processBulkUpload(this)">
+                </div>
+            </div>
+
+            <div id="adminProductList"></div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/cart.js"></script>
+    <script type="module" src="js/admin.js"></script>
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
